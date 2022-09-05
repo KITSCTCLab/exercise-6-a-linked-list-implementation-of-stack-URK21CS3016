@@ -1,4 +1,4 @@
-lass Node:
+class Node:
   def __init__(self, data):
     self.data = data
     self.next = None
@@ -9,29 +9,32 @@ class Stack:
     self.head = None
 
   def push(self, data) -> None:
-    temp = Node(data)
-    if self.head == None:
-      self.head = temp
-      temp.next = None
-    else:
-      temp.next = self.head
-      self.head = temp
+    # Write your code here
+    new_node = Node(data)
+    new_node.next = self.head
+    self.head = new_node
 
   def pop(self) -> None:
-    if self.head == None:
-      pass
-    else
-      self.head = self.head.next
+    # Write your code here
+    if(self.head != None): 
+      temp = self.head
+      self.head = temp.next
+      temp.next = None
 
   def status(self):
     """
     It prints all the elements of stack.
     """
-    temp = self.head
-    while temp != None:
-      print(temp.data, "=>", sep = "", end = "")
-      temp = temp.next
-    print("None")
+    # Write your code here 
+    if(self.head != None):
+      temp = self.head
+      while(temp.next != None):
+        print(temp.data, end = "=>")
+        temp = temp.next
+      else:
+        print(temp.data,"None", sep="=>")
+    else:
+      print("None")
 
 
 # Do not change the following code
